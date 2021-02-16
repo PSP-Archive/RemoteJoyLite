@@ -1,0 +1,19 @@
+/* -*- mode:c -*-																*/
+/*------------------------------------------------------------------------------*/
+/* Setting_Capt																	*/
+/*------------------------------------------------------------------------------*/
+#if   (LANGUAGE==LANG_JA)
+static CW_DATA CWD_JoyAviBox  = { 20,  35, 320, 121, 500, CWD_GROUP,  FNT_BOLD, L"AVI 設定" };
+static CW_DATA CWD_JoyAviChk  = { 30,  55, 160,  15, 501, CWD_CHECK,  FNT_NORM, L"AVI キャプチャを使用する" };
+static CW_DATA CWD_JoyFpsConf = { 30,  80,  70, 300, 502, CWD_COMBO,  FNT_NORM, NULL };
+static CW_DATA CWD_JoyAviConf = { 30, 110,  80,  21, 503, CWD_BUTTON, FNT_NORM, L"Codec 設定" };
+static CW_DATA CWD_JoyWavBox  = { 20, 161, 320, 121, 510, CWD_GROUP,  FNT_BOLD, L"WAV 設定" };
+static CW_DATA CWD_JoyWavChk  = { 30, 181, 160,  15, 511, CWD_CHECK,  FNT_NORM, L"WAV キャプチャを使用する" };
+#elif (LANGUAGE==LANG_EN)
+static CW_DATA CWD_JoyAviBox  = { 20,  35, 320, 121, 500, CWD_GROUP,  FNT_BOLD, L"AVI setting" };
+static CW_DATA CWD_JoyAviChk  = { 30,  55, 160,  15, 501, CWD_CHECK,  FNT_NORM, L"Enable AVI capture" };
+static CW_DATA CWD_JoyFpsConf = { 30,  80,  70, 300, 502, CWD_COMBO,  FNT_NORM, NULL };
+static CW_DATA CWD_JoyAviConf = { 30, 110,  80,  21, 503, CWD_BUTTON, FNT_NORM, L"Codec" };
+static CW_DATA CWD_JoyWavBox  = { 20, 161, 320, 121, 510, CWD_GROUP,  FNT_BOLD, L"WAV setting" };
+static CW_DATA CWD_JoyWavChk  = { 30, 181, 160,  15, 511, CWD_CHECK,  FNT_NORM, L"Enable WAV capture" };
+#endif

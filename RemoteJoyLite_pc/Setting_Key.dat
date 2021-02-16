@@ -1,0 +1,34 @@
+/* -*- mode:c -*-																*/
+/*------------------------------------------------------------------------------*/
+/* Setting_Key																	*/
+/*------------------------------------------------------------------------------*/
+#define KEY_NAME_SIZE	49
+
+static struct {
+	int		dik;
+	WCHAR	*name;
+} KeyNameTable[KEY_NAME_SIZE] = {
+#if   (LANGUAGE==LANG_JA)
+	{ 0, L"未使用" },
+#elif (LANGUAGE==LANG_EN)
+	{ 0, L"Not Use" },
+#endif
+	{ DIK_1, L"１" },{ DIK_2, L"２" },{ DIK_3, L"３" },{ DIK_4, L"４" },{ DIK_5, L"５" },
+	{ DIK_6, L"６" },{ DIK_7, L"７" },{ DIK_8, L"８" },{ DIK_9, L"９" },{ DIK_0, L"０" },
+	{ DIK_A, L"Ａ" },{ DIK_B, L"Ｂ" },{ DIK_C, L"Ｃ" },{ DIK_D, L"Ｄ" },{ DIK_E, L"Ｅ" },
+	{ DIK_F, L"Ｆ" },{ DIK_G, L"Ｇ" },{ DIK_H, L"Ｈ" },{ DIK_I, L"Ｉ" },{ DIK_J, L"Ｊ" },
+	{ DIK_K, L"Ｋ" },{ DIK_L, L"Ｌ" },{ DIK_M, L"Ｍ" },{ DIK_N, L"Ｎ" },{ DIK_O, L"Ｏ" },
+	{ DIK_P, L"Ｐ" },{ DIK_Q, L"Ｑ" },{ DIK_R, L"Ｒ" },{ DIK_S, L"Ｓ" },{ DIK_T, L"Ｔ" },
+	{ DIK_U, L"Ｕ" },{ DIK_V, L"Ｖ" },{ DIK_W, L"Ｗ" },{ DIK_X, L"Ｘ" },{ DIK_Y, L"Ｙ" },
+	{ DIK_Z, L"Ｚ" },{ DIK_SPACE, L"SPACE" },{ DIK_RETURN, L"ENTER" },
+	{ DIK_UP, L"↑" },{ DIK_RIGHT, L"→" },{ DIK_DOWN, L"↓" },{ DIK_LEFT, L"←" },
+	{ DIK_INSERT, L"INSERT"  },{ DIK_DELETE, L"DELETE"    },
+	{ DIK_HOME,   L"HOME"    },{ DIK_END,    L"END"       },
+	{ DIK_PRIOR,  L"PAGE UP" },{ DIK_NEXT,   L"PAGE DOWN" },
+};
+
+#if   (LANGUAGE==LANG_JA)
+static CW_DATA CWD_KeyConfUse = { 190, 264, 140, 15, 270, CWD_CHECK, FNT_NORM, L"キー入力を有効にする" };
+#elif (LANGUAGE==LANG_EN)
+static CW_DATA CWD_KeyConfUse = { 190, 264, 140, 15, 270, CWD_CHECK, FNT_NORM, L"Enable key input" };
+#endif

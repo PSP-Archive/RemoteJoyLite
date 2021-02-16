@@ -1,0 +1,21 @@
+/* -*- mode:c -*-																*/
+/*------------------------------------------------------------------------------*/
+/* Setting_Filt																	*/
+/*------------------------------------------------------------------------------*/
+#if   (LANGUAGE==LANG_JA)
+static CW_DATA CWD_GammaChk     = {  20, 40, 230,  15, 400, CWD_CHECK, FNT_NORM, L"ガンマ補正のＲＧＢ個別設定" };
+static CW_DATA CWD_ALLGammaTxt  = {  20, 65, 120,  21, 410, CWD_TEXT,  FNT_NORM, L"ガンマ補正" };
+static CW_DATA CWD_ALLGammaLst  = {  90, 61,  50, 250, 411, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_RGBGammaTxt  = {  20, 65, 320,  21, 420, CWD_TEXT,  FNT_NORM, L"ガンマ補正 ( R          , G          , B          )" };
+static CW_DATA CWD_RGBGammaRLst = { 110, 61,  50, 250, 421, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_RGBGammaGLst = { 188, 61,  50, 250, 422, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_RGBGammaBLst = { 266, 61,  50, 250, 423, CWD_COMBO, FNT_NORM, NULL };
+#elif (LANGUAGE==LANG_EN)
+static CW_DATA CWD_GammaChk     = {  20, 40, 230,  15, 400, CWD_CHECK, FNT_NORM, L"Seperate RGB correction" };
+static CW_DATA CWD_ALLGammaTxt  = {  20, 65, 120,  21, 410, CWD_TEXT,  FNT_NORM, L"Gamma" };
+static CW_DATA CWD_ALLGammaLst  = {  90, 61,  50, 250, 411, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_RGBGammaTxt  = {  20, 65, 320,  21, 420, CWD_TEXT,  FNT_NORM, L"Gamma      ( R          , G          , B          )" };
+static CW_DATA CWD_RGBGammaRLst = { 110, 61,  50, 250, 421, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_RGBGammaGLst = { 188, 61,  50, 250, 422, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_RGBGammaBLst = { 266, 61,  50, 250, 423, CWD_COMBO, FNT_NORM, NULL };
+#endif

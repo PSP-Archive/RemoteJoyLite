@@ -1,0 +1,24 @@
+/* -*- mode:c -*-																*/
+/*------------------------------------------------------------------------------*/
+/* Setting																		*/
+/*------------------------------------------------------------------------------*/
+WCHAR *ButtonName[29] = { L"SELECT",	L"DUMMY1",	L"DUMMY2",	L"START",
+						  L"↑",		L"→",		L"↓",		L"←",
+						  L"L-TRIG",	L"R-TRIG",	L"DUMMY3",	L"DUMMY4",
+						  L"△",		L"○",		L"×",		L"□",
+						  L"HOME",		L"DUMMY5",	L"DUMMY6",	L"DUMMY7",
+						  L"VOL＋",		L"VOL−",	L"SCREEN",	L"♪",
+						  L"Ana ↑",	L"Ana →",	L"Ana ↓",	L"Ana ←",
+#if   (LANGUAGE==LANG_JA)
+						  L"全画面" };
+#elif (LANGUAGE==LANG_EN)
+						  L"Full" };
+#endif
+
+WCHAR *DirectName[4] = { L"----", L"AXIS", L"ROT", L"AzRz" };
+
+#if   (LANGUAGE==LANG_JA)
+static CW_DATA CWD_JoyCnfSave = { 267, 304, 88, 21, 999, CWD_BUTTON,  FNT_NORM, L"設定保存" };
+#elif (LANGUAGE==LANG_EN)
+static CW_DATA CWD_JoyCnfSave = { 267, 304, 88, 21, 999, CWD_BUTTON,  FNT_NORM, L"Save" };
+#endif

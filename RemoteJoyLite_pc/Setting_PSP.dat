@@ -1,0 +1,53 @@
+/* -*- mode:c -*-																*/
+/*------------------------------------------------------------------------------*/
+/* Setting_PSP																	*/
+/*------------------------------------------------------------------------------*/
+#if   (LANGUAGE==LANG_JA)
+static WCHAR NumberBuff[16];
+static CW_DATA CWD_PSPModeTxt = {  20,  40, 190,  21, 600, CWD_TEXT,  FNT_NORM, L"画像転送方式" };
+static CW_DATA CWD_PSPModeLst = { 250,  36,  85, 250, 601, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_PSPAdr1Txt = {  20,  65, 190,  21, 602, CWD_TEXT,  FNT_NORM, L"転送画像保存アドレス" };
+static CW_DATA CWD_PSPAdr1Lst = { 250,  61,  85, 250, 603, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_PSPAdr2Txt = {  20,  90, 220,  21, 604, CWD_TEXT,  FNT_NORM, L"転送画像保存アドレス（PSP-2000専用）" };
+static CW_DATA CWD_PSPAdr2Lst = { 250,  86,  85, 250, 605, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_PSPPriTxt  = {  20, 115, 220,  21, 606, CWD_TEXT,  FNT_NORM, L"スレッド優先順位" };
+static CW_DATA CWD_PSPPriLst  = { 250, 111,  85, 250, 607, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_PSPFPSTxt  = {  20, 140, 120,  21, 608, CWD_TEXT,  FNT_NORM, L"画像転送ＦＰＳ" };
+static CW_DATA CWD_PSPFPSLst  = { 250, 136,  85, 250, 609, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_PSPAsync   = {  20, 165, 120,  15, 611, CWD_CHECK, FNT_NORM, L"Vblank 強制転送" };
+static CW_DATA CWD_PSPDispChk = {  20, 190, 200,  15, 610, CWD_CHECK, FNT_NORM, L"ＰＳＰの画面表示をＯＦＦにする" };
+static LPCWSTR ModeLst[]  = { L"TYPE 0", L"TYPE 1", L"TYPE 2", L"TYPE 3", L"TEST MODE" };
+static LPCWSTR AdrUnused  = L"未使用";
+static CW_DATA CWD_PSPTrnsTxt  = {  20, 215, 220,  21, 620, CWD_TEXT,   FNT_NORM, L"転送領域の設定" };
+static CW_DATA CWD_PSPTrnsLst  = { 200, 211, 135, 250, 621, CWD_COMBO,  FNT_NORM, NULL };
+static CW_DATA CWD_PSPRectTxt  = {  20, 240, 325,  21, 622, CWD_TEXT,   FNT_NORM, L"転送領域の位置−サイズ (      ,      )−(      ,      )" };
+static CW_DATA CWD_PSPRectXLst = { 160, 238,  30,  16, 623, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_PSPRectYLst = { 202, 238,  30,  16, 624, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_PSPRectWLst = { 256, 238,  30,  16, 625, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_PSPRectHLst = { 298, 238,  30,  16, 626, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_PSPDbgChk   = {  20, 270, 230,  15, 650, CWD_CHECK,  FNT_NORM, L"デバックモード" };
+#elif (LANGUAGE==LANG_EN)
+static WCHAR NumberBuff[16];
+static CW_DATA CWD_PSPModeTxt = {  20,  40, 190,  21, 600, CWD_TEXT,  FNT_NORM, L"Transfer type" };
+static CW_DATA CWD_PSPModeLst = { 250,  36,  85, 250, 601, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_PSPAdr1Txt = {  20,  65, 190,  21, 602, CWD_TEXT,  FNT_NORM, L"Transfer sys address" };
+static CW_DATA CWD_PSPAdr1Lst = { 250,  61,  85, 250, 603, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_PSPAdr2Txt = {  20,  90, 220,  21, 604, CWD_TEXT,  FNT_NORM, L"Transfer sys address(PSP-2000 only)" };
+static CW_DATA CWD_PSPAdr2Lst = { 250,  86,  85, 250, 605, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_PSPPriTxt  = {  20, 115, 220,  21, 606, CWD_TEXT,  FNT_NORM, L"Thread Priority" };
+static CW_DATA CWD_PSPPriLst  = { 250, 111,  85, 250, 607, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_PSPFPSTxt  = {  20, 140, 120,  21, 608, CWD_TEXT,  FNT_NORM, L"Transfer FPS" };
+static CW_DATA CWD_PSPFPSLst  = { 250, 136,  85, 250, 609, CWD_COMBO, FNT_NORM, NULL };
+static CW_DATA CWD_PSPAsync   = {  20, 165, 160,  15, 611, CWD_CHECK, FNT_NORM, L"Vblank Forced Transfer" };
+static CW_DATA CWD_PSPDispChk = {  20, 190, 160,  15, 610, CWD_CHECK, FNT_NORM, L"Turn PSP screen off" };
+static LPCWSTR ModeLst[]  = { L"TYPE 0", L"TYPE 1", L"TYPE 2", L"TYPE 3", L"TEST MODE" };
+static LPCWSTR AdrUnused  = L"Not Use";
+static CW_DATA CWD_PSPTrnsTxt  = {  20, 215, 220,  21, 620, CWD_TEXT,   FNT_NORM, L"Transfer rect" };
+static CW_DATA CWD_PSPTrnsLst  = { 200, 211, 135, 250, 621, CWD_COMBO,  FNT_NORM, NULL };
+static CW_DATA CWD_PSPRectTxt  = {  20, 240, 325,  21, 622, CWD_TEXT,   FNT_NORM, L"Transfer pos - size   (      ,      )−(      ,      )" };
+static CW_DATA CWD_PSPRectXLst = { 160, 238,  30,  16, 623, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_PSPRectYLst = { 202, 238,  30,  16, 624, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_PSPRectWLst = { 256, 238,  30,  16, 625, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_PSPRectHLst = { 298, 238,  30,  16, 626, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_PSPDbgChk   = {  20, 270, 230,  15, 650, CWD_CHECK,  FNT_NORM, L"Debug mode" };
+#endif

@@ -1,0 +1,21 @@
+/* -*- mode:c -*-																*/
+/*------------------------------------------------------------------------------*/
+/* Setting_Macro																*/
+/*------------------------------------------------------------------------------*/
+#if   (LANGUAGE==LANG_JA)
+static CW_DATA CWD_McrRecTxt = {  20,  35, 320,  70, 700, CWD_GROUP,  FNT_BOLD, L"マクロ記録の設定" };
+static CW_DATA CWD_McrRecUse = {  30,  55, 145,  15, 701, CWD_CHECK,  FNT_NORM, L"入力マクロを記録する" };
+static CW_DATA CWD_McrRecNo  = { 255,  51,  75, 250, 702, CWD_COMBO,  FNT_NORM, NULL };
+static CW_DATA CWD_McrRecAna = {  30,  80, 165,  15, 703, CWD_CHECK,  FNT_NORM, L"アナログデータも記録する" };
+static CW_DATA CWD_McrPlyTxt = {  20, 110, 320, 150, 710, CWD_GROUP,  FNT_BOLD, L"マクロ再生の設定" };
+static CW_DATA CWD_McrPlyChk = { 225, 130, 105,  15, 711, CWD_CHECK,  FNT_NORM, L"マクロ再生表示" };
+static LPCWSTR PlayModeLst[7] = { L"Not Use", L"SB-PUSH", L"CB-PUSH", L"SB-TGL", L"CB-TGL", L"SB-TGL-LOOP", L"CB-TGL-LOOP" };
+#elif (LANGUAGE==LANG_EN)
+static CW_DATA CWD_McrRecTxt = {  20,  35, 320,  70, 700, CWD_GROUP,  FNT_BOLD, L"Macro record setting" };
+static CW_DATA CWD_McrRecUse = {  30,  55, 145,  15, 701, CWD_CHECK,  FNT_NORM, L"Enable macro record" };
+static CW_DATA CWD_McrRecNo  = { 255,  51,  75, 250, 702, CWD_COMBO,  FNT_NORM, NULL };
+static CW_DATA CWD_McrRecAna = {  30,  80, 165,  15, 703, CWD_CHECK,  FNT_NORM, L"Record analog data" };
+static CW_DATA CWD_McrPlyTxt = {  20, 110, 320, 150, 710, CWD_GROUP,  FNT_BOLD, L"Macro play setting" };
+static CW_DATA CWD_McrPlyChk = { 225, 130, 105,  15, 711, CWD_CHECK,  FNT_NORM, L"Display macro" };
+static LPCWSTR PlayModeLst[7] = { L"Not Use", L"SB-PUSH", L"CB-PUSH", L"SB-TGL", L"CB-TGL", L"SB-TGL-LOOP", L"CB-TGL-LOOP" };
+#endif

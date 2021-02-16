@@ -1,0 +1,53 @@
+/* -*- mode:c -*-																*/
+/*------------------------------------------------------------------------------*/
+/* Setting_Etc																	*/
+/*------------------------------------------------------------------------------*/
+#if   (LANGUAGE==LANG_JA)
+static WCHAR NumberBuff[16];
+static CW_DATA CWD_DispAspeChk  = {  20,  40, 160,  15, 300, CWD_CHECK,  FNT_NORM, L"アスペクト比を保持する" };
+static CW_DATA CWD_DispTopChk   = {  20,  65, 160,  15, 301, CWD_CHECK,  FNT_NORM, L"常に最前面に表示する" };
+static CW_DATA CWD_FullAdjChk   = {  20,  90, 165,  15, 302, CWD_CHECK,  FNT_NORM, L"全画面時に表示調整をする" };
+static CW_DATA CWD_FullRectTxt  = {  20, 115, 325,  21, 303, CWD_TEXT,   FNT_NORM, L"全画面時の位置−サイズ (      ,      )−(      ,      )" };
+static CW_DATA CWD_FullRectXLst = { 161, 113,  30,  16, 304, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_FullRectYLst = { 203, 113,  30,  16, 305, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_FullRectWLst = { 257, 113,  30,  16, 306, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_FullRectHLst = { 299, 113,  30,  16, 307, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_RebootBox    = {  15, 167, 330, 120, 310, CWD_GROUP,  FNT_BOLD, L"RemoteJoyLite の再起動が必要" };
+static CW_DATA CWD_DispSizeTxt  = {  25, 187, 100,  21, 311, CWD_TEXT,   FNT_NORM, L"起動時の状態" };
+static CW_DATA CWD_DispSizeLst  = { 110, 183,  60, 250, 312, CWD_COMBO,  FNT_NORM, NULL };
+static CW_DATA CWD_DispRotTxt   = { 190, 187, 100,  21, 313, CWD_TEXT,   FNT_NORM, L"起動時の方向" };
+static CW_DATA CWD_DispRotLst   = { 275, 183,  60, 250, 314, CWD_COMBO,  FNT_NORM, NULL };
+static CW_DATA CWD_DispRectTxt  = {  25, 212, 315,  21, 315, CWD_TEXT,   FNT_NORM, L"起動時の位置−サイズ  (      ,      )−(      ,      )" };
+static CW_DATA CWD_DispRectXLst = { 160, 210,  30,  16, 316, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_DispRectYLst = { 202, 210,  30,  16, 317, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_DispRectWLst = { 256, 210,  30,  16, 318, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_DispRectHLst = { 298, 210,  30,  16, 319, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_DispOffChk   = {  25, 237, 190,  15, 320, CWD_CHECK,  FNT_NORM, L"画面転送ＯＦＦ状態で起動する" };
+static CW_DATA CWD_InputBGChk   = {  25, 262, 215,  15, 321, CWD_CHECK,  FNT_NORM, L"非アクティブ入力を有効にする" };
+static LPCWSTR DispSize[] = { L"------", L"最大化", L"最小化" };
+static LPCWSTR DispRot[]  = { L"------", L" 90度", L"180度", L"270度" };
+#elif (LANGUAGE==LANG_EN)
+static WCHAR NumberBuff[16];
+static CW_DATA CWD_DispAspeChk  = {  20,  40, 160,  15, 300, CWD_CHECK,  FNT_NORM, L"Keep aspect ratio" };
+static CW_DATA CWD_DispTopChk   = {  20,  65, 160,  15, 301, CWD_CHECK,  FNT_NORM, L"Always on top" };
+static CW_DATA CWD_FullAdjChk   = {  20,  90, 165,  15, 302, CWD_CHECK,  FNT_NORM, L"Display adjustment by full-screen" };
+static CW_DATA CWD_FullRectTxt  = {  20, 115, 325,  21, 303, CWD_TEXT,   FNT_NORM, L"Full-screen pos - size (      ,      )−(      ,      )" };
+static CW_DATA CWD_FullRectXLst = { 167, 113,  30,  16, 304, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_FullRectYLst = { 209, 113,  30,  16, 305, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_FullRectWLst = { 263, 113,  30,  16, 306, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_FullRectHLst = { 305, 113,  30,  16, 307, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_RebootBox    = {  15, 167, 330, 120, 310, CWD_GROUP,  FNT_BOLD, L"Restart RemoteJoyLite" };
+static CW_DATA CWD_DispSizeTxt  = {  25, 187, 100,  21, 311, CWD_TEXT,   FNT_NORM, L"Start state" };
+static CW_DATA CWD_DispSizeLst  = { 110, 183,  60, 250, 312, CWD_COMBO,  FNT_NORM, NULL };
+static CW_DATA CWD_DispRotTxt   = { 190, 187, 100,  21, 313, CWD_TEXT,   FNT_NORM, L"Start rotate" };
+static CW_DATA CWD_DispRotLst   = { 275, 183,  60, 250, 314, CWD_COMBO,  FNT_NORM, NULL };
+static CW_DATA CWD_DispRectTxt  = {  25, 212, 315,  21, 315, CWD_TEXT,   FNT_NORM, L"Start pos - size     (      ,      )−(      ,      )" };
+static CW_DATA CWD_DispRectXLst = { 160, 210,  30,  16, 316, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_DispRectYLst = { 202, 210,  30,  16, 317, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_DispRectWLst = { 256, 210,  30,  16, 318, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_DispRectHLst = { 298, 210,  30,  16, 319, CWD_NUMBER, FNT_NORM, NumberBuff };
+static CW_DATA CWD_DispOffChk   = {  25, 237, 190,  15, 320, CWD_CHECK,  FNT_NORM, L"Start screen transfer off" };
+static CW_DATA CWD_InputBGChk   = {  25, 262, 215,  15, 321, CWD_CHECK,  FNT_NORM, L"Enable non-active input" };
+static LPCWSTR DispSize[] = { L"------", L"Max", L"Min" };
+static LPCWSTR DispRot[]  = { L"------", L" 90", L"180", L"270" };
+#endif
